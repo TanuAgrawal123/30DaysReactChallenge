@@ -11,18 +11,17 @@ class Counter extends Component{
 
 	return <ul>{this.state.tags.map(tag=><li key={tag}>{tag}</li>)}</ul>;
 	}
-	handleIncrement()
-	{
-	console.log('Increment clicked');
-	}
+	handleIncrement = (product) => {
+	console.log(product);
+	this.setState({count: this.state.count +1});
+	};
+
 	render()
 	{
 	 return (
 	<React.Fragment>
-	
-	 <span className={this.getBadgeClasses()}>{this.formatCount()}</span><button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
-{this.state.tags.length===0 && 'plz create a new string'}
-	 {this.renderTags()}
+	<span className={this.getBadgeClasses()}>{this.formatCount()}</span><button onClick={(product) => this.handleIncrement()} className="btn btn-secondary btn-sm">Increment</button>
+	 
 	 
 	 </React.Fragment>
 	 );
