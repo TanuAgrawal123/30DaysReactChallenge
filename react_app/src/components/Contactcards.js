@@ -6,7 +6,7 @@ function ContactCard(props)
 <div className="contact-card">
 <h2>{props.contact.name}</h2>
 <img src={props.contact.imageUrl}/>
-<p>Phone:{props.contact.phone}</p>
+<p style={{display: !props.contact.phone && "none"}}>Phone:{props.contact.phone}</p>
 <p>Email:{props.contact.email}</p>
 </div>
 		)
