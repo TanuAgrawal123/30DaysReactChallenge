@@ -1,11 +1,13 @@
 import React from 'react'
 
 
-function TodoItem(){
+function TodoItem(props){
 	return(
 <div className="todo_item">
-<input type="checkbox" />
-<p>Placeholder text here</p>
+<input type="checkbox" checked={props.items.completed} />
+<h2>{props.items.text}</h2>
+<hr/>
+
 
 </div>
 		)
