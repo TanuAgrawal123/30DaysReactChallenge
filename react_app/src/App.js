@@ -7,14 +7,16 @@ import ContactCard from './components/Contactcards'
 import Joke from './components/joke'
 import JokeComponents from './components/jokecompnent'
 import './css/style.css'
+import Product from './components/product'
+import ProductData from './components/productdata'
 function App()
 {
-	const Jokecomponents=JokeComponents.map(joke => <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />)
+	const productcomponents=ProductData.map(item => <Product key={item.id} product={item} />)
 
 
 	return (
 		<div>
-{Jokecomponents}
+{productcomponents}
 </div>
 		)}
 
