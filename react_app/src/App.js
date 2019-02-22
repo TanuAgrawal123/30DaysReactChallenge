@@ -7,15 +7,22 @@ import './css/style.css'
 class App extends React.Component{
 	constructor()
 	{super()
-		this.state={name:"tanu",
-		age:20}
-	}
+		this.state={isLogedin:false
+			}
+
+
+		}
+	
 	render()
-	{
+	{let wordDisplay
+		if (!this.state.isLogedin)
+			wordDisplay="out"
+		else
+			wordDisplay="in"
 		return (
 			<div>
-			<h1>{this.state.name}</h1>
-			<h2>{this.state.age} years old</h2>
+			<h1>You Are Currently loged {wordDisplay}</h1>
+			
 			</div>
 		)
 }}
