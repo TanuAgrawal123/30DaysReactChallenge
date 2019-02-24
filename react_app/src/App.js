@@ -3,7 +3,7 @@ import React from 'react'
 import TodoItem from './components/todoitem'
 import TodoData from './components/tododata'
 import './css/style.css'
-/*
+
 class App extends React.Component{
 	constructor()
 	{super()
@@ -20,8 +20,7 @@ const todocomponents=this.state.todos.map(item => <TodoItem key={item.id} items=
 	</div>)
 }
 }
-*/
-class App extends React.Component{
+ class App extends React.Component{
 	constructor()
 	{
 		super()
@@ -46,6 +45,6 @@ class App extends React.Component{
 				</div>
 				)
 		}
-	}
+	}*/
  export default App
 
