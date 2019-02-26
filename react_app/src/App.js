@@ -10,41 +10,34 @@ class App extends React.Component{
 		this.state={
 			todos:TodoData
 		}
+     this.handleChange=this.handleChange.bind(this)
 	}
+	handleChange(id){
+		this.setState(prevState =>{
+			const updateTodos=prevState.todos.map(todo =>{
+				if(todo.id===id){
+					todo.completed= !todo.completed
+				}
+			
+			
+		        return todo 
+		    })
+		     return {
+		     	todos:updateTodos}
+		})
+	}
+
+
 	render()
 	{	
-const todocomponents=this.state.todos.map(item => <TodoItem key={item.id} items={item} />)
+const todocomponents=this.state.todos.map(item => <TodoItem key={item.id} items={item} handleChange={this.handleChange} />)
 	return (
 		<div>
 		{todocomponents}
 	</div>)
 }
 }
- class App extends React.Component{
-	constructor()
-	{
-		super()
-		this.state={
-			count:0
-		}
-		this.handleclick=this.handleclick.bind(this)
 
-		}
-		handleclick()
 
-		{
-			this.setState(prevState => {return {count:prevState.count +1}})
-		}
-		render(){
-			
-			return(
-				<div>
-				<h1>{this.state.count}</h1>
-				<button onClick={this.handleclick}>Change!</button>
-
-				</div>
-				)
-		}
-	}*/
  export default App
 
