@@ -2,10 +2,11 @@ import React from 'react'
 
 import TodoItem from './components/todoitem'
 import TodoData from './components/tododata'
+import Conditional from './components/conditional'
 import './css/style.css'
 
-class App extends React.Component{
-	constructor()
+/*class App extends React.Component{
+constructor()
 	{super()
 		this.state={
 			todos:TodoData
@@ -37,7 +38,31 @@ const todocomponents=this.state.todos.map(item => <TodoItem key={item.id} items=
 	</div>)
 }
 }
-
+*/
+class App extends React.Component{
+	constructor(){
+		super()
+		this.state={
+			isloading:true
+		}
+	}
+	componentDidMount()
+	{
+		setTimeout(()=>{
+			this.setState({
+				isloading:false
+			})
+		}, 1500)
+	}
+	render()
+	{
+		return(
+<div>
+<Conditional isloading={this.state.isloading}/>
+</div>
+			)
+	}
+}
 
  export default App
 
