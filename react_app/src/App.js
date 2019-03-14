@@ -43,22 +43,26 @@ class App extends React.Component{
 	constructor(){
 		super()
 		this.state={
-			isloading:true
+			isloggedin:false
 		}
+		this.handleClick=this.handleClick.bind(this)
 	}
-	componentDidMount()
-	{
-		setTimeout(()=>{
-			this.setState({
-				isloading:false
-			})
-		}, 1500)
+	
+	handleClick(){
+		this.setState(prevState=>{
+			return{
+				isloggedin: !prevState.isloggedin
+				}
+		})
 	}
 	render()
 	{
+		let buttontext=this.state.isloggedin?"LOGOUT" :"LOGIN"
+		let displaytext=this.state.isloggedin ? "login..." :"logout"
 		return(
 <div>
-<Conditional isloading={this.state.isloading}/>
+<button onClick={this.handleClick}>{buttontext}</button>
+<h1>{displaytext}</h1>
 </div>
 			)
 	}
