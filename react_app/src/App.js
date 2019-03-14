@@ -43,29 +43,61 @@ class App extends React.Component{
 constructor(){
 	super()
 	this.state={
-		loading:false,
-		character:{}
+		firstName:"",
+		lastName:"",
+		isfriendly:false,
+		gender:"",
+		favColor:"blue"
 
 	}
+	this.handleChange=this.handleChange.bind(this)
+
 
 }
-componentDidMount(){
-	this.setState({loading:true})
-	fetch("https://swapi.co/api/people/1")
-	.then(response => response.json())
-	.then(data=>{
-		this.setState({loading:false,
-			character:data})
-
-	})
+handleChange(event){
+	const {name, value, type, checked}=event.target
+	type=="checkbox"? this.setState({[name]:checked}) :this.setState({[name]:value})
+	
 }
 render(){
-	const text=this.state.loading ? "loading...." :this.state.character.name
 	return(
-		<div>
-		<h1>{text}</h1>
-		</div>)
-}
+		<form>
+		<input type="text" name="firstName" value={this.state.firstName} placeholder="First Name" onChange={this.handleChange}/>
+		<br/>
+		<input type="text" name="lastName" value={this.state.lastName} placeholder="Last Name" onChange={this.handleChange}/>
+		<h1>{this.state.firstName} {this.state.lastName}</h1>
+		<textarea
+		value={"some default value"} onChange={this.handleChange}/>
+<br/>
+<label>
+<input type="checkbox" name="isfriendly" checked={this.state.isfriendly} onChange={this.handleChange}/>
+<h3>is Friendly?</h3>
+
+</label>
+<br/>
+<label>
+<input type="radio" name="gender" value="female" checked={this.state.gender==="female"}onChange={this.handleChange}/>
+female
+<br/>
+
+</label>
+<label>
+<input type="radio" name="gender" value="male" checked={this.state.gender==="male"} onChange={this.handleChange}/>male
+
+</label>
+<br/>
+<label>Favourite color</label>
+<select name="favColor" value={this.state.favColor} onChange={this.handleChange}>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="red">Red</option>
+</select>
+<h2> You are a {this.state.gender}</h2>
+<h2> Your Favourite color is {this.state.favColor}</h2>
+		</form>
+
+	)
+	}
 }
 
  export default App
