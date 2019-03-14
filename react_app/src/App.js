@@ -5,7 +5,7 @@ import TodoData from './components/tododata'
 import Conditional from './components/conditional'
 import './css/style.css'
 
-/*class App extends React.Component{
+class App extends React.Component{
 constructor()
 	{super()
 		this.state={
@@ -37,35 +37,6 @@ const todocomponents=this.state.todos.map(item => <TodoItem key={item.id} items=
 		{todocomponents}
 	</div>)
 }
-}
-*/
-class App extends React.Component{
-	constructor(){
-		super()
-		this.state={
-			isloggedin:false
-		}
-		this.handleClick=this.handleClick.bind(this)
-	}
-	
-	handleClick(){
-		this.setState(prevState=>{
-			return{
-				isloggedin: !prevState.isloggedin
-				}
-		})
-	}
-	render()
-	{
-		let buttontext=this.state.isloggedin?"LOGOUT" :"LOGIN"
-		let displaytext=this.state.isloggedin ? "login..." :"logout"
-		return(
-<div>
-<button onClick={this.handleClick}>{buttontext}</button>
-<h1>{displaytext}</h1>
-</div>
-			)
-	}
 }
 
  export default App
