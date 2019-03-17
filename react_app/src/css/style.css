@@ -30,3 +30,49 @@
 
 
 }
+
+.headers{
+	height: 100;
+}
+.text{
+	display: inline-block;
+	font-size: 100px;
+	margin-top:30;
+}
+header{
+	background-color: purple;
+}
+.Meme {
+  position: relative;
+  text-align: center;
+  color:white;
+  font-size: 30px;
+}
+.top{
+	position: absolute;
+	top:10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottom{
+	position: absolute;
+	bottom: 05%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.input1{
+	height: 20px;
+	text-align: center;
+	border:1px solid black;
+	margin:5px;
+}
+.input2{
+	height: 20px;
+	text-align: center;
+	border:1px solid black;
+	margin:5px;
+}
+button{
+	background-color: purple;
+}
